@@ -48,7 +48,9 @@ button {
 img {
 	display: block;
 	max-width: 100%;
+	height: auto;
 }
+
 h1,
 h2,
 h3,
@@ -73,7 +75,7 @@ p {
 /* ================================================-_(/standardization)_-=============================================== */
 
 /* ================================================-_(header)_-================================================ */
-header {
+/* header {
 	border-bottom: 1px solid #e7e9fc;
 	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -181,15 +183,26 @@ li.thickness {
 .current-dynamic:focus.current-dynamic::after {
 	content: "";
 	transform: scale(1);
-}
+} */
 /* ================================================-_(/header)_-=============================================== */
 
 /* ================================================-_(common-styles)_-================================================ */
 .container {
-	width: 1158px;
+	max-width : 1158px;
 	padding: 0 15px;
 	margin: 0 auto;
 	align-items: center;
+	outline: 1px solid #000;
+}
+@media only screen and (max-width: 767px) {
+	.container {
+		max-width: 426px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+	.container {
+		max-width: 766px;
+	}
 }
 .thickness {
 	font-weight: 500;
@@ -216,14 +229,6 @@ li.thickness {
 	gap: 24px;
 }
 
-.heading {
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
-	color: var(--dark);
-
-	margin-bottom: 8px;
-}
 .section-geometry {
 	padding: 120px 0;
 }
@@ -233,7 +238,7 @@ li.thickness {
 /* ================================================-_(main)_-================================================ */
 
 /* ================================================-_(hero)_-================================================ */
-.hero {
+/* .hero {
 	background-color: var(--dark);
 	background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero-bg.jpg");
 	background-repeat: no-repeat;
@@ -278,7 +283,7 @@ li.thickness {
 .button-hero:hover,
 .button-hero:focus {
 	background-color: var(--pressed-state);
-}
+} */
 /* ================================================-_(/hero)_-=============================================== */
 
 /* ================================================-_(features)_-================================================ */
@@ -291,11 +296,52 @@ li.thickness {
 	justify-content: center;
 	margin-bottom: 8px;
 }
+
+.heading-features {
+	font-size: 20px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: var(--dark);
+	margin-bottom: 8px;
+}
 .features {
 	padding: 120px 0;
 }
 .features-item {
 	flex-basis: calc((100% - 3 * 24px) / 4);
+}
+@media only screen and (max-width: 767px) {
+	.heading-features {
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 1157px) {
+	.features-svg-container {
+		display: none;
+	}
+	.heading-features {
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 1.11;
+	}
+	.features {
+		padding: 96px 0;
+	}
+	.text{
+		font-weight: 500;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+	.features-item {
+		flex-basis: calc((100% - 1 * 24px) / 2);
+	}
+}
+@media only screen and (min-width: 768px) {
+	.list-features {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 72px 24px;
+	}
 }
 /* ================================================-_(/features)_-=============================================== */
 
@@ -303,15 +349,28 @@ li.thickness {
 .work {
 	padding-top: 0;
 }
+@media only screen and (max-width: 1157px) {
+	.work {
+		display: none;
+	}
+}
 .work-item {
 	flex-basis: calc((100% - 2 * 24px) / 3);
 }
 /* ================================================-_(/Work)_-=============================================== */
 /* ================================================-_(Team)_-================================================ */
-.team-info {
+/* .team-info {
 	text-align: center;
 	padding: 32px 0;
 	border-radius: 0px 0px 4px 4px;
+}
+.heading-team {
+	font-size: 20px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: var(--dark);
+
+	margin-bottom: 8px;
 }
 .team {
 	background-color: var(--light);
@@ -347,12 +406,12 @@ li.thickness {
 	display: flex;
 	justify-content: center;
 	gap: 24px;
-}
+} */
 
 /* ================================================-_(/Team)_-=============================================== */
 
 /* ================================================-_(customers)_-================================================ */
-.customers-link {
+/* .customers-link {
 	border: 1px solid var(--light-slate);
 	border-radius: 4px;
 	display: flex;
@@ -377,13 +436,13 @@ li.thickness {
 .customers-list-item {
 	width: calc((100% - 120px) / 6);
 	height: 88px;
-}
+} */
 
 /* ================================================-_(/customers)_-=============================================== */
 /* ================================================-_(/main)_-=============================================== */
 
 /* ================================================-_(portfolio)_-================================================ */
-.portfolio {
+/* .portfolio {
 	padding: 96px 0px 120px;
 }
 .button {
@@ -453,12 +512,12 @@ li.thickness {
 .portfolio-item-link:hover .overlay,
 .portfolio-item-link:focus .overlay {
 	transform: translatey(0);
-}
+} */
 
 /* ================================================-_(/portfolio)_-=============================================== */
 
 /* ================================================-_(footer)_-================================================ */
-.footer {
+/* .footer {
 	background-color: var(--dark);
 	padding: 100px 0;
 }
@@ -560,11 +619,11 @@ strong.footer-paragraph {
 	background-color: var(--pressed-state);
 }
 .footer-icon {
-}
+} */
 
 /* ================================================-_(/footer)_-=============================================== */
 /* ================================================-_(backdrop)_-================================================ */
-.backdrop {
+/* .backdrop {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -756,7 +815,6 @@ strong.footer-paragraph {
 	outline: solid currentColor;
 }
 
-
 .policy-label .modal-label {
 	margin-bottom: 0;
 }
@@ -785,7 +843,6 @@ strong.footer-paragraph {
 .modal-send-btn:hover,
 .modal-send-btn:focus {
 	background-color: var(--pressed-state);
-}
-
+} */
 
 /* ================================================-_(/backdrop)_-=============================================== */
