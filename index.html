@@ -19,9 +19,10 @@
 <body>
 	<header class="header">
 		<div class="container">
+			<a href="./index.html" class="link link-styles">Web<span
+					class="logo-accent">Studio</span>
+			</a>
 			<nav class="header-nav">
-				<a href="./index.html" class="link link-styles">Web<span
-						class="logo-accent">Studio</span></a>
 				<ul class="list interactive list-styles">
 					<li class="thickness"><a class="link current-static"
 							href="./index.html">Studio</a>
@@ -40,7 +41,14 @@
 					</li>
 				</ul>
 			</address>
+			<button class="menu-toggle js-open-menu" aria-expanded="false"
+				aria-controls="mobile-menu">
+				<svg class="menu-hamburger" width="32" height="22">
+					<use href="./images/icon.svg#hamburger"></use>
+				</svg>
+			</button>
 		</div>
+
 	</header>
 
 
@@ -362,7 +370,7 @@
 				</div>
 				<div class="footer-social-media">
 					<p class="thickness footer-paragraph">Social media</p>
-					<ul class="list footer-social-list">
+					<ul class="list social-list">
 						<li class="footer-social-media"><a href=""
 								class="links-container links-container-footer">
 								<svg class="icon links" width="24" height="24">
@@ -468,9 +476,70 @@
 			</form>
 		</div>
 	</div>
+	<!-- =======================================================-_(Mobile menu)_-======================================================= -->
+	<div class="menu-container js-menu-container" id="mobile-menu">
+		<div class="container">
+			<button class="menu-toggle js-close-menu">
+				<svg class="close" width="8" height="8">
+					<use href="./images/icon.svg#close"></use>
+				</svg>
+			</button>
+			<ul class="list interactive list-styles mobile-menu-nav">
+				<li class="thickness"><a class="link current-static"
+						href="./index.html">Studio</a>
+				</li>
+				<li class="thickness"><a class="link current-dynamic"
+						href="./portfolio.html">Portfolio</a></li>
+				<li class="thickness"><a class="link current-dynamic"
+						href="">Contacts</a>
+				</li>
+			</ul>
+			<div class="contacts">
+				<ul class="list interactive list-styles mobile-menu-address">
+					<li><a class="link mobile-menu-tel thickness"
+							href="tel:+110001111111">+11(000)111-11-11</a>
+					</li>
+					<li><a class="link mobile-menu-email"
+							href="mailto:info@devstudio.com">info@devstudio.com</a>
+					</li>
+				</ul>
+				<ul class="list social-list">
+					<li class="footer-social-media"><a href=""
+							class="links-container links-container-footer">
+							<svg class="icon links" width="24" height="24">
+								<use href="./images/icon.svg#instagram"></use>
+							</svg>
+						</a></li>
+					<li class="footer-social-media"><a href=""
+							class="links-container links-container-footer">
+							<svg class="icon links" width="24" height="24">
+								<use href="./images/icon.svg#twitter"></use>
+							</svg>
+						</a></li>
+					<li class="footer-social-media"><a href=""
+							class="links-container links-container-footer">
+							<svg class="icon links" width="24" height="24">
+								<use href="./images/icon.svg#facebook"></use>
+							</svg>
+						</a></li>
+					<li class="footer-social-media"><a href=""
+							class="links-container links-container-footer">
+							<svg class="icon links" width="24" height="24">
+								<use href="./images/icon.svg#linkedin"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- =======================================================-_(/Mobile menu)_-====================================================== -->
 
-
-
+	<script defer
+		src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+		integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+		crossorigin="anonymous"></script>
+	<script defer src="./js/mobile-menu.js"></script>
 	<script src="./js/modal.js"></script>
 </body>
 

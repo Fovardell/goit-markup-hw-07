@@ -75,7 +75,7 @@ p {
 /* ================================================-_(/standardization)_-=============================================== */
 
 /* ================================================-_(header)_-================================================ */
-/* header {
+header {
 	border-bottom: 1px solid #e7e9fc;
 	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -175,7 +175,49 @@ li.thickness {
 .current-dynamic:focus.current-dynamic::after {
 	content: "";
 	transform: scale(1);
-} */
+}
+.menu-hamburger {
+	stroke: var(--dark);
+}
+.menu-toggle.js-open-menu {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+/*==============================================================================================================================================
+----------------------------------------------------------------------Mobile
+================================================================================================================================================*/
+@media only screen and (max-width: 767px) {
+	nav.header-nav {
+		display: none;
+	}
+	.address {
+		display: none;
+	}
+	header > .container {
+		justify-content: space-between;
+		align-items: center;
+	}
+	.container {
+		position: relative;
+	}
+	header a {
+		display: block;
+		padding: 24px 0 22px 0;
+	}
+	.link {
+	}
+	.current-static {
+	}
+	.current-dynamic {
+	}
+	.mobile-menu-address {
+		font-style: normal;
+	}
+}
+/*==============================================================================================================================================
+---------------------------------------------------------------------/Mobile
+================================================================================================================================================*/
 /* ================================================-_(/header)_-=============================================== */
 
 /* ================================================-_(common-styles)_-================================================ */
@@ -184,24 +226,23 @@ li.thickness {
 	padding: 0 15px;
 	margin: 0 auto;
 	align-items: center;
-	/* outline: 1px solid #000; */
+	outline: 1px solid #000;
 }
 @media only screen and (max-width: 767px) {
 	.container {
-		max-width: 426px;
+		max-width: 428px;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
 	.container {
-		max-width: 766px;
+		max-width: 768px;
 	}
-}
-@media only screen and (min-width: 768px) and (max-width: 1157px) {
 	.tablet-content-wrapper {
 		width: 552px;
 		margin: 0 auto;
 	}
 }
+
 .thickness {
 	font-weight: 500;
 }
@@ -655,9 +696,9 @@ li.thickness {
 
 	transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
-.footer-social-list {
+.social-list {
 	display: flex;
-	gap: 24px;
+	gap: 16px;
 }
 .links-container-footer:hover,
 .links-container-footer:focus {
@@ -668,6 +709,10 @@ li.thickness {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 16px 24px;
+}
+.footer .tablet-content-wrapper {
+	display: flex;
+	flex-wrap: wrap;
 }
 .subscribe-input {
 	border: 1px solid #fff;
@@ -742,6 +787,9 @@ li.thickness {
 	.footer-btn {
 		margin: 0 auto;
 	}
+	.footer .tablet-content-wrapper {
+		justify-content: center;
+	}
 }
 
 /*==============================================================================================================================================
@@ -755,10 +803,7 @@ li.thickness {
 		padding: 96px 0;
 	}
 	.footer .tablet-content-wrapper {
-		display: flex;
-		flex-wrap: wrap;
 		gap: 72px 24px;
-		justify-content: center;
 	}
 }
 /*==============================================================================================================================================
@@ -802,6 +847,95 @@ li.thickness {
 ================================================================================================================================================*/
 /* ================================================-_(/footer)_-=============================================== */
 
+/*==============================================================================================================================================
+----------------------------------------------------------------------Mobile menu
+================================================================================================================================================*/
+.menu-toggle.js-close-menu {
+	display: inline-flex;
+	padding: 8px;
+
+	border-radius: 50%;
+	background-color: rgba(231, 233, 252, 0.1);
+
+	border: 1px solid rgba(46, 47, 66, 0.1);
+
+	position: absolute;
+	top: 17px;
+	right: 18px;
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-toggle.js-close-menu:hover,
+.menu-toggle.js-close-menu:focus {
+	background-color: var(--pressed-state);
+	fill: var(--white-background);
+}
+
+@media (min-width: 768px) {
+	.menu-toggle {
+		display: none;
+	}
+}
+.menu-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--white-background);
+	z-index: 999;
+
+	transform: translateX(100%);
+	transition: transform cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.menu-container.is-open {
+	transform: translateX(0);
+}
+
+.mobile-menu-nav {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+.mobile-menu-address {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	margin-bottom: 48px;
+}
+a.mobile-menu-email {
+	font-size: 20px;
+	line-height: 24px;
+}
+a.mobile-menu-tel:hover,
+a.mobile-menu-tel:focus {
+	color: var(--text);
+}
+a.mobile-menu-tel {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.11;
+	color: var(--primary-brand);
+}
+.menu-container .social-list {
+	justify-content: space-between;
+}
+.menu-container .container {
+	padding: 80px 35px 40px 40px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	align-content: space-between;
+}
+/*==============================================================================================================================================
+---------------------------------------------------------------------/Mobile menu 
+================================================================================================================================================*/
 /* ================================================-_(backdrop)_-================================================ */
 .backdrop {
 	position: fixed;
