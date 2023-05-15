@@ -927,7 +927,7 @@ a.mobile-menu-tel {
 	justify-content: space-between;
 }
 .menu-container .container {
-	padding: 80px 35px 40px 40px;
+	padding: 80px 35px 75px 40px;
 	display: flex;
 	flex-wrap: wrap;
 	height: 100%;
